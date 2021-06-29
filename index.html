@@ -17,14 +17,16 @@
         <link href="2.chunk.css" rel="stylesheet">
     </head>
     <script>
-        let url_string = window.location.href;  
-        let url = new URL(url_string);
-        let fio = url.searchParams.get("fio");
-        let dr = url.searchParams.get("dr");
-        let date = url.searchParams.get("date");
-        document.querySelector("#fio").innerHTML = fio;
-        document.querySelector("#birthdate").innerHTML = dr;
-        document.querySelector("#expiring").innerHTML = date;
+        document.addEventListener("DOMContentLoaded", function(event) {
+            let url_string = window.location.href;  
+            let url = new URL(url_string);
+            let fio = url.searchParams.get("fio");
+            let dr = url.searchParams.get("dr");
+            let date = url.searchParams.get("date");
+            document.querySelector("#fio").innerHTML = fio;
+            document.querySelector("#birthdate").innerHTML = dr;
+            document.querySelector("#expiring").innerHTML = date;
+        });
     </script>
 
     <body>
