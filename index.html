@@ -16,6 +16,17 @@
         <link href="1.chunk.css" rel="stylesheet">
         <link href="2.chunk.css" rel="stylesheet">
     </head>
+    <script>
+        let url_string = window.location.href;  
+        let url = new URL(url_string);
+        let fio = url.searchParams.get("fio");
+        let dr = url.searchParams.get("dr");
+        let date = url.searchParams.get("date");
+        document.querySelector("#fio").innerHTML = fio;
+        document.querySelector("#birthdate").innerHTML = dr;
+        document.querySelector("#expiring").innerHTML = date;
+    </script>
+
     <body>
         <div class="main-container">
             <div class="main_content" id="root">
@@ -34,16 +45,15 @@
                                 <div>
                                     <h4 class="status-param">
                                         Сведения о владельце QR-кода:
-                                        <br>
-                                        {{ fio }}
+                                        <div id="fio"></div>
                                     </h4>
                                     <h4 class="status-param">
                                         Дата рождения: 
-                                        {{ birthday }}
+                                        <div id="birthdate"></div>
                                     </h4>
                                     <h4 class="status-param">
                                         Срок действия: 
-                                        {{ expired }}
+                                        <div id="expiring"></div>
                                     </h4>
                                 </div>
                             </div>
